@@ -6,12 +6,16 @@
 /*   By: juhanse <juhanse@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 23:26:05 by juhanse           #+#    #+#             */
-/*   Updated: 2024/11/19 22:49:02 by juhanse          ###   ########.fr       */
+/*   Updated: 2024/11/19 23:08:27 by juhanse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 1
+# endif
 
 # include <unistd.h>
 # include <stdlib.h>
