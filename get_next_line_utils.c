@@ -6,27 +6,11 @@
 /*   By: juhanse <juhanse@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 23:27:33 by juhanse           #+#    #+#             */
-/*   Updated: 2024/11/19 22:35:02 by juhanse          ###   ########.fr       */
+/*   Updated: 2024/11/19 23:09:57 by juhanse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-
-int	ft_is_new_line(char *s)
-{
-	size_t	i;
-
-	i = 0;
-	if (!s)
-		return (0);
-	while (s[i])
-	{
-		if (s[i] == '\n')
-			return (1);
-		i++;
-	}
-	return (0);
-}
 
 size_t	ft_strlen(const char *s)
 {
@@ -101,4 +85,19 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		buffer[i] = s[start + i];
 	buffer[i] = '\0';
 	return (buffer);
+}
+
+char	*ft_strchr(const char *s, int c)
+{
+	int	i;
+
+	i = -1;
+	while (s[++i])
+	{
+		if (s[i] == (unsigned char)c)
+			return ((char *)&s[i]);
+	}
+	if ((unsigned char)c == '\0')
+		return ((char *)&s[i]);
+	return (NULL);
 }
