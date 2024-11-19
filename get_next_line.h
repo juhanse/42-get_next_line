@@ -6,17 +6,15 @@
 /*   By: juhanse <juhanse@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 23:26:05 by juhanse           #+#    #+#             */
-/*   Updated: 2024/11/19 22:41:54 by juhanse          ###   ########.fr       */
+/*   Updated: 2024/11/19 22:49:02 by juhanse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_GNL_H
-# define FT_GNL_H
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
 # include <unistd.h>
 # include <stdlib.h>
-
-# define BUFFER_SIZE 5
 
 size_t	ft_strlen(const char *s);
 int		ft_is_new_line(char *s);
