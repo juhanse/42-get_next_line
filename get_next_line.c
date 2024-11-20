@@ -6,7 +6,7 @@
 /*   By: juhanse <juhanse@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 23:27:01 by juhanse           #+#    #+#             */
-/*   Updated: 2024/11/20 13:00:37 by juhanse          ###   ########.fr       */
+/*   Updated: 2024/11/20 14:35:12 by juhanse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,13 +56,14 @@ static char	*ft_new_line(int fd, char *buffer, char *tmp)
 	while (!ft_strchr(tmp, '\n'))
 	{
 		read_bytes = read(fd, buffer, BUFFER_SIZE);
-		if (read_bytes == 0 && tmp[0] == '\0')
+		if (read_bytes < 0)
 		{
+			free(buffer);
 			free(tmp);
 			return (NULL);
 		}
-		if (read_bytes <= 0)
-			return (tmp);
+		if (read_bytes == 0)
+			break ;
 		buffer[read_bytes] = '\0';
 		new_tmp = ft_strjoin(tmp, buffer);
 		free(tmp);
@@ -78,9 +79,9 @@ char	*get_next_line(int fd)
 	char		*line;
 	static char	*tmp;
 
-	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, 0, 0) < 0)
+	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
-	if (tmp == NULL)
+	if (!tmp)
 		tmp = ft_strdup("");
 	buffer = (char *)malloc(sizeof(char) * (BUFFER_SIZE + 1));
 	if (!buffer)
@@ -90,8 +91,6 @@ char	*get_next_line(int fd)
 	if (!tmp)
 		return (NULL);
 	line = ft_get_line(tmp, &i);
-	if (!line && !tmp)
-		return (NULL);
 	tmp = ft_stash_line(tmp, i);
 	return (line);
 }
