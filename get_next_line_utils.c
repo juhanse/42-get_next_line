@@ -6,7 +6,7 @@
 /*   By: juhanse <juhanse@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 23:27:33 by juhanse           #+#    #+#             */
-/*   Updated: 2024/11/19 23:09:57 by juhanse          ###   ########.fr       */
+/*   Updated: 2024/11/20 13:01:33 by juhanse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,12 +50,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	int		j;
 	char	*buffer;
 
-	if (!s1 && !s2)
+	if (!s1 || !s2 || (!s1 && !s2))
 		return (NULL);
-	if (!s1)
-		return (ft_strdup(s2));
-	if (!s2)
-		return (ft_strdup(s1));
 	buffer = (char *)malloc((ft_strlen(s1) + ft_strlen(s2) + 1) * sizeof(char));
 	if (!buffer)
 		return (NULL);
@@ -66,7 +62,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	while (s2[j])
 		buffer[i++] = s2[j++];
 	buffer[i] = '\0';
-	free(s1);
 	return (buffer);
 }
 

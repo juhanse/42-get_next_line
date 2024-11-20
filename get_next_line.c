@@ -6,7 +6,7 @@
 /*   By: juhanse <juhanse@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 23:27:01 by juhanse           #+#    #+#             */
-/*   Updated: 2024/11/20 12:58:48 by juhanse          ###   ########.fr       */
+/*   Updated: 2024/11/20 13:00:37 by juhanse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ char	*get_next_line(int fd)
 	if (!buffer)
 		return (NULL);
 	tmp = ft_new_line(fd, buffer, tmp);
-	//free(buffer);
+	free(buffer);
 	if (!tmp)
 		return (NULL);
 	line = ft_get_line(tmp, &i);
