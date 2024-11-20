@@ -6,13 +6,13 @@
 /*   By: juhanse <juhanse@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 23:27:01 by juhanse           #+#    #+#             */
-/*   Updated: 2024/11/19 23:07:48 by juhanse          ###   ########.fr       */
+/*   Updated: 2024/11/20 12:50:09 by juhanse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-static char	*keep_rest(char *tmp, int i)
+static char	*ft_stash_line(char *tmp, int i)
 {
 	int		len;
 	char	*buffer;
@@ -28,7 +28,7 @@ static char	*keep_rest(char *tmp, int i)
 	return (buffer);
 }
 
-static char	*extract_line(char *tmp, int *start_next)
+static char	*ft_get_line(char *tmp, int *start_next)
 {
 	int		i;
 	char	*line;
@@ -48,7 +48,7 @@ static char	*extract_line(char *tmp, int *start_next)
 	return (line);
 }
 
-static char	*new_line(int fd, char *buffer, char *tmp)
+static char	*ft_new_line(int fd, char *buffer, char *tmp)
 {
 	int		read_bytes;
 	char	*new_tmp;
@@ -85,13 +85,13 @@ char	*get_next_line(int fd)
 	buffer = (char *)malloc(sizeof(char) * (BUFFER_SIZE + 1));
 	if (!buffer)
 		return (NULL);
-	tmp = new_line(fd, buffer, tmp);
+	tmp = ft_new_line(fd, buffer, tmp);
 	free(buffer);
 	if (!tmp)
 		return (NULL);
-	line = extract_line(tmp, &i);
+	line = ft_get_line(tmp, &i);
 	if (!line && !tmp)
 		return (NULL);
-	tmp = keep_rest(tmp, i);
+	tmp = ft_stash_line(tmp, i);
 	return (line);
 }
