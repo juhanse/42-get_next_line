@@ -6,7 +6,7 @@
 /*   By: juhanse <juhanse@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 23:27:01 by juhanse           #+#    #+#             */
-/*   Updated: 2024/11/20 12:50:09 by juhanse          ###   ########.fr       */
+/*   Updated: 2024/11/20 12:58:48 by juhanse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static char	*ft_stash_line(char *tmp, int i)
 	return (buffer);
 }
 
-static char	*ft_get_line(char *tmp, int *start_next)
+static char	*ft_get_line(char *tmp, int *next)
 {
 	int		i;
 	char	*line;
@@ -37,14 +37,14 @@ static char	*ft_get_line(char *tmp, int *start_next)
 	while (tmp[i] && tmp[i] != '\n')
 		i++;
 	if (tmp[i] == '\n')
-		*start_next = i + 1;
+		*next = i + 1;
 	else
 	{
-		*start_next = i;
+		*next = i;
 		if (i == 0 && tmp[i] == '\0')
 			return (NULL);
 	}
-	line = ft_substr(tmp, 0, *start_next);
+	line = ft_substr(tmp, 0, *next);
 	return (line);
 }
 
@@ -86,7 +86,7 @@ char	*get_next_line(int fd)
 	if (!buffer)
 		return (NULL);
 	tmp = ft_new_line(fd, buffer, tmp);
-	free(buffer);
+	//free(buffer);
 	if (!tmp)
 		return (NULL);
 	line = ft_get_line(tmp, &i);
