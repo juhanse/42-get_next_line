@@ -6,25 +6,11 @@
 /*   By: juhanse <juhanse@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 23:27:33 by juhanse           #+#    #+#             */
-/*   Updated: 2024/11/20 13:07:43 by juhanse          ###   ########.fr       */
+/*   Updated: 2024/11/20 13:09:33 by juhanse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-
-int	ft_is_newline(char *s)
-{
-	size_t	i;
-
-	i = 0;
-	if (!s)
-		return (NULL);
-	while (s[i])
-	{
-		if (s[i] == '\n')
-			return (1)l
-	}
-}
 
 size_t	ft_strlen(const char *s)
 {
