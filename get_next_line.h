@@ -6,7 +6,7 @@
 /*   By: juhanse <juhanse@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 23:26:05 by juhanse           #+#    #+#             */
-/*   Updated: 2024/11/26 16:03:45 by juhanse          ###   ########.fr       */
+/*   Updated: 2024/11/26 16:04:34 by juhanse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,6 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <fcntl.h>
-
-typedef struct s_list
-{
-	char			*content;
-	struct s_list	*next;
-}	t_list;
 
 size_t	ft_strlen(const char *s);
 char	*ft_strdup(const char *s);
