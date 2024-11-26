@@ -6,7 +6,7 @@
 /*   By: juhanse <juhanse@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 14:43:46 by juhanse           #+#    #+#             */
-/*   Updated: 2024/11/20 14:46:05 by juhanse          ###   ########.fr       */
+/*   Updated: 2024/11/26 16:03:20 by juhanse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	main(void)
 	int		fd;
 	char	*line;
 
-	fd = open("test/simple", 0_RDONLY);
+	fd = open("test/simple", O_RDONLY);
 	while (1)
 	{
 		line = get_next_line(fd);

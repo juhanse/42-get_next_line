@@ -6,7 +6,7 @@
 /*   By: juhanse <juhanse@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 23:26:05 by juhanse           #+#    #+#             */
-/*   Updated: 2024/11/20 14:53:08 by juhanse          ###   ########.fr       */
+/*   Updated: 2024/11/26 16:03:45 by juhanse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # include <stdio.h> // REMOVE
 # include <unistd.h>
 # include <stdlib.h>
+# include <fcntl.h>
 
 typedef struct s_list
 {
