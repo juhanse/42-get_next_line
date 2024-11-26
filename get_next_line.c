@@ -6,24 +6,24 @@
 /*   By: juhanse <juhanse@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 23:27:01 by juhanse           #+#    #+#             */
-/*   Updated: 2024/11/26 16:06:30 by juhanse          ###   ########.fr       */
+/*   Updated: 2024/11/26 17:24:58 by juhanse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-static char	*ft_stash_line(char *tmp, int i)
+static char	*ft_stash_line(char *tmp, int end_line)
 {
 	int		len;
 	char	*buffer;
 
-	len = ft_strlen(tmp) - i;
+	len = ft_strlen(tmp) - end_line;
 	if (len <= 0)
 	{
 		free(tmp);
 		return (NULL);
 	}
-	buffer = ft_substr(tmp, i, len);
+	buffer = ft_substr(tmp, end_line, len);
 	free(tmp);
 	return (buffer);
 }
@@ -53,6 +53,7 @@ static char	*ft_new_line(int fd, char *buffer, char *tmp)
 	int		read_bytes;
 	char	*new_tmp;
 
+	read_bytes = 1;
 	while (!ft_strchr(tmp, '\n'))
 	{
 		read_bytes = read(fd, buffer, BUFFER_SIZE);
@@ -74,7 +75,7 @@ static char	*ft_new_line(int fd, char *buffer, char *tmp)
 
 char	*get_next_line(int fd)
 {
-	int			i;
+	int			end_line;
 	char		*buffer;
 	char		*line;
 	static char	*tmp;
@@ -90,7 +91,7 @@ char	*get_next_line(int fd)
 	free(buffer);
 	if (!tmp)
 		return (NULL);
-	line = ft_get_line(tmp, &i);
-	tmp = ft_stash_line(tmp, i);
+	line = ft_get_line(tmp, &end_line);
+	tmp = ft_stash_line(tmp, end_line);
 	return (line);
 }
