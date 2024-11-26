@@ -6,7 +6,7 @@
 /*   By: juhanse <juhanse@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 14:43:46 by juhanse           #+#    #+#             */
-/*   Updated: 2024/11/26 16:03:20 by juhanse          ###   ########.fr       */
+/*   Updated: 2024/11/26 16:05:13 by juhanse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	main(void)
 	{
 		line = get_next_line(fd);
 		if (!line)
-			break;
+			break ;
 		printf("%s", line);
 		free(line);
 	}
