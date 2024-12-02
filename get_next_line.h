@@ -6,7 +6,7 @@
 /*   By: juhanse <juhanse@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 23:26:05 by juhanse           #+#    #+#             */
-/*   Updated: 2024/12/02 20:19:22 by juhanse          ###   ########.fr       */
+/*   Updated: 2024/12/02 20:22:03 by juhanse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,9 @@
 # endif
 
 size_t	ft_strlen(const char *s);
-char	*ft_strdup(const char *s);
 char	*ft_strjoin(char const *s1, char const *s2);
-char	*ft_substr(char const *s, unsigned int start, size_t len);
-char	*ft_strchr(const char *s, int c);
+char	*ft_strchr(const char *str, int character);
+size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 
 char	*get_next_line(int fd);
 
