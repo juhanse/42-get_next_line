@@ -6,7 +6,7 @@
 /*   By: juhanse <juhanse@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 14:43:46 by juhanse           #+#    #+#             */
-/*   Updated: 2024/12/02 11:18:31 by juhanse          ###   ########.fr       */
+/*   Updated: 2024/12/02 14:17:37 by juhanse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,18 @@ int	main(void)
 {
 	int		fd;
 	char	*line;
-	char	*a;
-	char	*empty;
-	char	*b;
 
 	fd = open("test.txt", O_RDONLY);
-	a = get_next_line(fd);
-	empty = get_next_line(fd);
-	b = get_next_line(fd);
-	if (!a || !empty || !b)
-		return (0);
-	printf("%s%s%s", a, empty, b);
+	if (fd < 0)
+		return (write(1, "Error", 5));
+	while (1)
+	{
+		line = get_next_line(fd);
+		if (line == NULL)
+			break ;
+		printf("%s", line);
+		free(line);
+	}
+	close(fd);
 	return (0);
 }
