@@ -6,23 +6,19 @@
 /*   By: juhanse <juhanse@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 23:26:05 by juhanse           #+#    #+#             */
-/*   Updated: 2024/12/02 13:52:34 by juhanse          ###   ########.fr       */
+/*   Updated: 2024/12/02 20:19:22 by juhanse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
 
-# include <stdio.h> // REMOVE
-# include <unistd.h> // REMOVE ?
+# include <limits.h>
 # include <stdlib.h>
-# include <fcntl.h>
+# include <unistd.h>
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 1
-#  if BUFFER_SIZE >= 10000000
-#   define BUFFER_SIZE 10
-#  endif
 # endif
 
 size_t	ft_strlen(const char *s);
