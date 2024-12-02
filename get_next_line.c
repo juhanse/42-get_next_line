@@ -6,7 +6,7 @@
 /*   By: juhanse <juhanse@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 23:27:01 by juhanse           #+#    #+#             */
-/*   Updated: 2024/11/27 14:27:02 by juhanse          ###   ########.fr       */
+/*   Updated: 2024/12/02 13:50:11 by juhanse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,11 @@ char	*get_next_line(int fd)
 	static char	*tmp;
 
 	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, 0, 0) < 0)
+	{
+		free(tmp);
+		tmp = NULL;
 		return (NULL);
+	}
 	if (!tmp)
 		tmp = ft_strdup("");
 	buffer = (char *)malloc(sizeof(char) * (BUFFER_SIZE + 1));
