@@ -6,7 +6,7 @@
 /*   By: juhanse <juhanse@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 14:43:46 by juhanse           #+#    #+#             */
-/*   Updated: 2024/11/27 14:30:24 by juhanse          ###   ########.fr       */
+/*   Updated: 2024/12/02 11:18:31 by juhanse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,5 @@ int	main(void)
 	if (!a || !empty || !b)
 		return (0);
 	printf("%s%s%s", a, empty, b);
-/* 	while (1)
-	{
-		line = get_next_line(fd);
-		if (!line)
-			break ;
-		printf("%s", line);
-		free(line);
-	} */
 	return (0);
 }
