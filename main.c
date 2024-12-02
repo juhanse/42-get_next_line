@@ -6,11 +6,13 @@
 /*   By: juhanse <juhanse@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 14:43:46 by juhanse           #+#    #+#             */
-/*   Updated: 2024/12/02 14:17:37 by juhanse          ###   ########.fr       */
+/*   Updated: 2024/12/02 20:28:54 by juhanse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+#include <fcntl.h>
+#include <stdio.h>
 
 int	main(void)
 {
