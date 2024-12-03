@@ -6,7 +6,7 @@
 /*   By: juhanse <juhanse@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 23:26:05 by juhanse           #+#    #+#             */
-/*   Updated: 2024/12/02 20:22:03 by juhanse          ###   ########.fr       */
+/*   Updated: 2024/12/03 20:46:34 by juhanse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ size_t	ft_strlen(const char *s);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strchr(const char *str, int character);
 size_t	ft_strlcpy(char *dst, const char *src, size_t size);
+char	*ft_free_cat(char **s1, char *s2);
 
 char	*get_next_line(int fd);
 
