@@ -6,7 +6,7 @@
 /*   By: juhanse <juhanse@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 23:27:01 by juhanse           #+#    #+#             */
-/*   Updated: 2024/12/03 20:50:56 by juhanse          ###   ########.fr       */
+/*   Updated: 2024/12/03 21:03:11 by juhanse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,21 @@
 
 static char	*ft_get_buf(int fd, char **buffer, char **tmp_buffer)
 {
-	int	bytes;
+	int	len;
 
 	while (!(*tmp_buffer) || !ft_strchr(*buffer, '\n'))
 	{
-		bytes = read(fd, *tmp_buffer, BUFFER_SIZE);
-		if (bytes < 0)
+		len = read(fd, *tmp_buffer, BUFFER_SIZE);
+		if (len < 0)
 		{
 			free(*tmp_buffer);
 			free(*buffer);
 			*buffer = NULL;
 			return (NULL);
 		}
-		if (bytes == 0)
+		if (len == 0)
 			break ;
-		(*tmp_buffer)[bytes] = '\0';
+		(*tmp_buffer)[len] = '\0';
 		*buffer = ft_line_cat(buffer, *tmp_buffer);
 		if (!(*buffer))
 		{
