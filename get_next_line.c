@@ -6,23 +6,11 @@
 /*   By: juhanse <juhanse@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 23:27:01 by juhanse           #+#    #+#             */
-/*   Updated: 2024/12/02 20:57:15 by juhanse          ###   ########.fr       */
+/*   Updated: 2024/12/03 20:46:43 by juhanse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-
-static char	*ft_free_cat(char **s1, char *s2)
-{
-	char	*buffer;
-
-	if (*s1)
-		buffer = ft_strjoin(*s1, s2);
-	else
-		buffer = ft_strjoin("", s2);
-	free(*s1);
-	return (buffer);
-}
 
 static char	*ft_get_buf(int fd, char **buffer, char **tmp_buffer)
 {
