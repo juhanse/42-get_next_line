@@ -6,7 +6,7 @@
 /*   By: juhanse <juhanse@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 23:27:01 by juhanse           #+#    #+#             */
-/*   Updated: 2024/12/03 20:46:43 by juhanse          ###   ########.fr       */
+/*   Updated: 2024/12/03 20:50:56 by juhanse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static char	*ft_get_buf(int fd, char **buffer, char **tmp_buffer)
 		if (bytes == 0)
 			break ;
 		(*tmp_buffer)[bytes] = '\0';
-		*buffer = ft_free_cat(buffer, *tmp_buffer);
+		*buffer = ft_line_cat(buffer, *tmp_buffer);
 		if (!(*buffer))
 		{
 			free(*tmp_buffer);

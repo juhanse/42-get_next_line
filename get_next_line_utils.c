@@ -6,7 +6,7 @@
 /*   By: juhanse <juhanse@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 23:27:33 by juhanse           #+#    #+#             */
-/*   Updated: 2024/12/03 20:46:25 by juhanse          ###   ########.fr       */
+/*   Updated: 2024/12/03 20:50:49 by juhanse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	return (len);
 }
 
-char	*ft_free_cat(char **s1, char *s2)
+char	*ft_line_cat(char **s1, char *s2)
 {
 	char	*buffer;
 
