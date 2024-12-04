@@ -6,7 +6,7 @@
 /*   By: juhanse <juhanse@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 23:27:33 by juhanse           #+#    #+#             */
-/*   Updated: 2024/12/04 12:37:34 by juhanse          ###   ########.fr       */
+/*   Updated: 2024/12/04 12:45:27 by juhanse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ size_t	ft_strlen(const char *s)
 	size_t	i;
 
 	if (!s)
-		return (0);
+		return (NULL);
 	i = 0;
 	while (s[i])
 		i++;
@@ -72,7 +72,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	size_t	len;
 
 	if (!dst || !src)
-		return (0);
+		return (NULL);
 	i = -1;
 	len = ft_strlen(src);
 	if (!size)
