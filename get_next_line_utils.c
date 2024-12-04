@@ -6,7 +6,7 @@
 /*   By: juhanse <juhanse@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/31 23:27:33 by juhanse           #+#    #+#             */
-/*   Updated: 2024/12/03 20:50:49 by juhanse          ###   ########.fr       */
+/*   Updated: 2024/12/04 12:37:34 by juhanse          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,29 +26,29 @@ size_t	ft_strlen(const char *s)
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int		size;
-	char	*ret;
 	int		i;
 	int		j;
+	int		size;
+	char	*buffer;
 
 	i = 0;
 	size = ft_strlen(s1) + ft_strlen(s2);
-	ret = malloc(sizeof(char) * (size + 1));
-	if (!ret || !s1 || !s2)
+	buffer = malloc(sizeof(char) * (size + 1));
+	if (!buffer || !s1 || !s2)
 		return (NULL);
 	while (s1[i])
 	{
-		ret[i] = s1[i];
+		buffer[i] = s1[i];
 		i++;
 	}
 	j = -1;
 	while (s2[++j])
 	{
-		ret[i] = s2[j];
+		buffer[i] = s2[j];
 		i++;
 	}
-	ret[size] = 0;
-	return (ret);
+	buffer[size] = 0;
+	return (buffer);
 }
 
 char	*ft_strchr(const char *str, int character)
